@@ -7,4 +7,5 @@ int main()
 	Zombie *create_zombie = newZombie("new zombie");
 	create_zombie->announce();
 	randomChump("random zombie");
+	delete create_zombie;
 }
