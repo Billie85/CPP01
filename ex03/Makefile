@@ -1,9 +1,9 @@
 NAME	= weapon
 
 SRCS	= main.cpp \
-		Weapon.cpp \
-		HumanA.cpp \
-		HumanB.cpp \
+		  HumanA.cpp \
+		  HumanB.cpp \
+		  Weapon.cpp
 
 OBJS		= $(SRCS:%.c=%.o)
 
