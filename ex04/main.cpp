@@ -23,14 +23,12 @@ int main(int argc, char *argv[])
 		return 1;
 	}
 	std::string line;
-	while(1);
+	while(1)
 	{
-		//sleep(1);
-		std::getline(std::cin, line);
-		/* if (open_file.eof())
-			return 0; */
-		//std::cout << line.find(str1) << std::endl;
-		//findのエラー処理npos
+		if (open_file.eof())
+			return 0;
+		std::getline(open_file, line);
+		std::cout << line << std::endl;
 	}
 	open_file.close();
 	return 0;
