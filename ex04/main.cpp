@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <stdio.h>
 
+
 //空文字の場合の処理をする。
 int main(int argc, char *argv[])
 {
@@ -22,11 +23,12 @@ int main(int argc, char *argv[])
 		return 1;
 	}
 	std::string line;
-	while(getline(open_file, line));
+	while(1);
 	{
-		sleep(1);
-		std::cout << line << std::endl;
-
+		//sleep(1);
+		std::getline(std::cin, line);
+		/* if (open_file.eof())
+			return 0; */
 		//std::cout << line.find(str1) << std::endl;
 		//findのエラー処理npos
 	}
