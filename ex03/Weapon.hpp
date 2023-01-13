@@ -14,4 +14,5 @@ public:
 	Weapon(std::string);
 	~Weapon(void);
 };
+
 #endif

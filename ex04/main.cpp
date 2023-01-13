@@ -28,15 +28,10 @@ int main(int argc, char *argv[])
             std::getline(open_file, line);
 			for (int i = 0; line[i]; i++)
 			{
-				std::cout << line[i];
 				size_t find_pos = line.find(str1);
 				if (find_pos == std::string::npos)
-				{
-					std::cerr << "Not Found" << std::endl;
 					break;
-				}
-				std::cout << "Find in position -> " << find_pos << std::endl;
-				line.erase(find_pos, str1.size());
+				std::cout << line.erase(find_pos, str1.size()) << std::endl;
 				std::cout << line.insert(find_pos, str2) << std::endl;
 			}
     }
