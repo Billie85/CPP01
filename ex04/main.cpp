@@ -14,27 +14,39 @@ int main(int argc, char *argv[])
     std::string file_name(argv[1]);
     std::string str1(argv[2]);
     std::string str2(argv[3]);
+
     std::ifstream open_file(file_name.c_str());
-    if (!open_file.is_open())
+    if (!open_file)
     {
-        std::cerr << "Error : Unable to open file:" << file_name << std::endl;
+        std::cerr << "Error : Unable to open file: " << file_name << std::endl;
         return 1;
     }
-    std::string line;
-    while(1)
+    if (str1 == str2)
+        {
+            std::cout << "it's the same try again" << std::endl;
+            return 1;
+        }
+    std::string new_file = file_name + ".replace";
+    std::ofstream output_file(new_file.c_str());
+    if (!output_file)
     {
-        if (open_file.eof())
-            return 0;
-            std::getline(open_file, line);
-			for (int i = 0; line[i]; i++)
-			{
-				size_t find_pos = line.find(str1);
-				if (find_pos == std::string::npos)
-					break;
-				std::cout << line.erase(find_pos, str1.size()) << std::endl;
-				std::cout << line.insert(find_pos, str2) << std::endl;
-			}
+        std::cout << "Error : Unable to open file: " << output_file << std::endl;
+        return 1; 
+    }
+
+    std::string line;
+    while(std::getline(open_file, line))
+    {
+        size_t find_pos = line.find(str1);
+        while (find_pos != std::string::npos)
+        {
+            line.erase(find_pos, str1.size());
+            line.insert(find_pos, str2);
+            find_pos = line.find(str1);
+        }
+        output_file << line << std::endl;
     }
     open_file.close();
+    output_file.close();
     return 0;
 }
