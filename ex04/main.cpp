@@ -14,7 +14,6 @@ int main(int argc, char *argv[])
     std::string file_name(argv[1]);
     std::string str1(argv[2]);
     std::string str2(argv[3]);
-
     std::ifstream open_file(file_name.c_str());
     if (!open_file)
     {
@@ -33,7 +32,6 @@ int main(int argc, char *argv[])
         std::cout << "Error : Unable to open file: " << output_file << std::endl;
         return 1; 
     }
-
     std::string line;
     while(std::getline(open_file, line))
     {

@@ -2,19 +2,21 @@ NAME	= losers
 
 SRCS	= main.cpp \
 
-OBJS		= $(SRCS:%.c=%.o)
+OBJS		= $(SRCS:%.cpp=%.o)
 
-CC			= c++
+CXX			= c++
 
-CFLAGS	=  -std=c++98
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 all		: $(NAME)
 
-$(NAME)	: $(SRCS)
-		$(CC) $(CFLAGS) -o $@ $^
+$(NAME)	: $(OBJS)
+		$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean	:
+		rm -f $(OBJS)
 
 fclean	: clean
 	rm -f $(NAME)
+
 re : fclean all

@@ -4,16 +4,16 @@ SRCS	= main.cpp \
 		  Zombie.cpp \
 		  zombieHorde.cpp
 
-OBJS		= $(SRCS:%.c=%.o)
+OBJS		= $(SRCS:%.cpp=%.o)
 
-CC			= c++
+CXX			= c++
 
-CFLAGS	= -Wall -Wextra -Werror -std=c++98
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 all		: $(NAME)
 
 $(NAME)	: $(SRCS)
-		$(CC) $(CFLAGS) -o $@ $^
+		$(CXX) $(CXXFLAGS) -o $@ $^
 
 clean	:
 

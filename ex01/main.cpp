@@ -2,10 +2,10 @@
 
 int main()
 {
-	int i = 42;
-	Zombie *p = zombieHorde(i,"42zombie");
-	for(int k =  0; k < i; k++)
-		p[k].announce();
+	int max = 42;
+	Zombie *p = zombieHorde(max, "42zombie");
+	for(int i = 0; i < max; i++)
+		p[i].announce();
 	delete []p;
 	system("leaks -q zombie");
 	return 0;

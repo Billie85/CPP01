@@ -2,11 +2,11 @@
 #include <string>
 #include "Harl.hpp"
 
-int main(int ac,char **av)
+int main(int argc,char **argv)
 {
 	Harl h;
 
-	if(ac == 2)
-		h.complain(av[1]);
+	if(argc == 2)
+		h.complain(argv[1]);
 	return 0;
 }

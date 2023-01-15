@@ -6,7 +6,7 @@
 class HumanB
 {
 private:
-	std::tring name;
+	std::string name;
 	Weapon *_weapon;
 public:
 void attack(void);
@@ -14,6 +14,5 @@ void setWeapon(Weapon &weapon);
 	HumanB(std::string);
 	~HumanB(void);
 };
-
 
 #endif

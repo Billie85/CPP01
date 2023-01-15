@@ -12,10 +12,10 @@ Harl::~Harl(){}
 
 void Harl::complain(std::string level)
 {
-	this->func [((level == "debug") * 1 + \
-			(level == "info") * 2 + \
-			(level == "warning") * 3 + \
-			(level == "error") * 4)]();
+	this->func [((level == "debug")  * 1 + \
+				(level == "info")    * 2 + \
+				(level == "warning") * 3 + \
+				(level == "error")   * 4)]();
 }
 
 void Harl::nothing(void){}
@@ -39,4 +39,3 @@ void Harl::error(void)
 {
     std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
-
